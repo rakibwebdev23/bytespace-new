@@ -9,16 +9,10 @@ import {
   useMotionValue,
   useSpring,
 } from "motion/react";
-
-interface Item {
-  id: number;
-  name: string;
-  designation: string;
-  image: string;
-}
+import type { HappyStudentsType } from "@/types/happyStudentsType";
 
 interface AnimatedTooltipProps {
-  items: Item[];
+  items: HappyStudentsType[];
 }
 
 const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
@@ -52,7 +46,7 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex max-w-full items-center">
       {items.map((item) => (
         <div
           key={item.id}
@@ -124,8 +118,8 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
             onMouseMove={handleMouseMove}
             className="
               relative
-              h-14
-              w-14
+              h-[43px]
+              w-[43px]
               cursor-pointer
               overflow-hidden
               rounded-full
@@ -156,8 +150,8 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
           z-40
           ml-0.5
           flex
-          h-13.75
-          w-14
+          h-[43px]
+          w-[43px]
           shrink-0
           items-center
           justify-center

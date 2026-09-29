@@ -3,54 +3,9 @@
 import { Search } from "lucide-react";
 import { Rating } from "react-simple-star-rating";
 
+import { happyStudentsData } from "@/data/happyStudentsData";
 import bannerBg from "../../../../public/home/banner-bg.png";
 import AnimatedTooltip from "./AnimatedTooltip";
-
-// Mock student data
-const items = [
-  {
-    id: 1,
-    name: "Alice Johnson",
-    designation: "Software Engineer",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    id: 2,
-    name: "Michael Lee",
-    designation: "Product Manager",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    id: 3,
-    name: "Sophia Martinez",
-    designation: "UI/UX Designer",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
-  },
-  {
-    id: 4,
-    name: "James Kim",
-    designation: "DevOps Engineer",
-    image: "https://randomuser.me/api/portraits/men/76.jpg",
-  },
-  {
-    id: 5,
-    name: "Emma Brown",
-    designation: "QA Analyst",
-    image: "https://randomuser.me/api/portraits/women/12.jpg",
-  },
-  {
-    id: 6,
-    name: "Daniel Smith",
-    designation: "Frontend Developer",
-    image: "https://randomuser.me/api/portraits/men/45.jpg",
-  },
-  {
-    id: 7,
-    name: "Olivia Wilson",
-    designation: "Product Designer",
-    image: "https://randomuser.me/api/portraits/women/33.jpg",
-  },
-];
 
 export default function Banner() {
   return (
@@ -61,7 +16,6 @@ export default function Banner() {
         backgroundImage: `url(${bannerBg.src})`,
       }}
     >
-      {/* ================= HERO CONTENT ================= */}
       <div className="mx-auto flex h-full w-full flex-col items-center px-4 pt-24 text-center text-white sm:px-6 sm:pt-32 lg:pt-36">
         <h1
           id="home-banner-title"
@@ -75,7 +29,6 @@ export default function Banner() {
           business with our wide range of courses.
         </p>
 
-        {/* Search */}
         <form
           role="search"
           action="/"
@@ -107,7 +60,7 @@ export default function Banner() {
         </form>
       </div>
 
-      {/* ================= UI/UX CARD ================= */}
+      {/* ui/ux card  */}
       <div className="absolute bottom-44 left-4 inline-flex flex-col items-start justify-center gap-2 rounded-2xl bg-white p-4 backdrop-blur-[10px] sm:bottom-12 sm:left-6 md:bottom-16 md:left-10 lg:bottom-76 lg:left-[30%]">
         <h2 className="text-base font-medium leading-[1.2] text-[#242528]">
           UI/UX Design
@@ -118,7 +71,7 @@ export default function Banner() {
         </p>
       </div>
 
-      {/* ================= LEARNING PROGRESS CARD ================= */}
+      {/* learning progress card */}
       <div className="absolute bottom-4 right-4 inline-flex w-[min(15rem,calc(100vw-2rem))] flex-col items-start gap-2 rounded-2xl bg-white p-4 backdrop-blur-[10px] sm:bottom-12 sm:right-6 sm:w-60 md:bottom-16 md:right-[8%] lg:bottom-56 lg:right-[25%]">
         <h2 className="text-sm font-medium leading-[1.2] text-[#242528]">
           Learning Progress
@@ -142,32 +95,34 @@ export default function Banner() {
 
       {/* happy students card */}
       <div
-  className="absolute bottom-44 left-4 rounded-3xl bg-white px-4 py-4 text-left sm:bottom-12 sm:left-6 md:bottom-16 md:left-10
-  lg:bottom-52 lg:left-[34%]"
+  className="absolute bottom-44 left-4 z-10 w-[min(17rem,calc(100vw-2rem))] rounded-3xl bg-white p-4 text-left sm:bottom-12 sm:left-6 sm:w-auto md:bottom-16 md:left-10
+  lg:bottom-14 lg:left-[23%]"
   >
   <h2 className="text-[16px] font-medium leading-[1.2] text-[#242528]">
     Happy Students
   </h2>
 
   <div className="mt-1 flex items-center gap-0.75">
-    <span className="text-[12px] font-normal leading-[1.4] text-[#82868E]">
+    <span className="text-[12px] font-normal leading-[1.6] text-[#82868E]">
       4.5 (240)
     </span>
 
-    <Rating
-      initialValue={4.5}
-      allowFraction
-      readonly
-      size={15}
-      SVGclassName="inline-block"
-      fillColor="#D4FB20"
-      emptyColor="#E5E5E5"
-      transition
-    />
+    <span className="flex h-4 items-center">
+      <Rating
+        initialValue={4.5}
+        allowFraction
+        readonly
+        size={16}
+        SVGclassName="inline-block"
+        fillColor="#D4FB20"
+        emptyColor="#E5E5E5"
+        transition
+      />
+    </span>
   </div>
 
-  <div className="mt-2">
-    <AnimatedTooltip items={items} />
+  <div className="mt-2 max-w-full overflow-hidden">
+    <AnimatedTooltip items={happyStudentsData} />
   </div>
 </div>
     </section>
