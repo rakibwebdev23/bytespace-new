@@ -11,7 +11,7 @@ export default function CommonWrapper({
 }: CommonWrapperProps) {
   return (
     <div
-      className={`mx-auto w-full max-w-[1440px] px-2 sm:px-4 lg:px-2 ${className}`}
+      className={`mx-auto w-full max-w-360 px-2 sm:px-4 lg:px-2 ${className}`}
     >
       {children}
     </div>

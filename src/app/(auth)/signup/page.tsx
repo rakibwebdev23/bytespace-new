@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CommonWrapper from "@/components/common/CommonWrapper";
+import CommonWrapper from "@/components/shared/CommonWrapper";
 
 export default function SignUpPage() {
   return (
