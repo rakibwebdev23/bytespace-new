@@ -25,13 +25,13 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
 
   const x = useMotionValue(0);
 
-  // Rotate tooltip
+  // rotate tooltip
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
     springConfig
   );
 
-  // Move tooltip horizontally
+  // move tooltip horizontally
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
     springConfig
@@ -54,7 +54,7 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          {/* ================= HOVER TOOLTIP ================= */}
+          {/* hover tooltip  */}
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
               <motion.div
@@ -100,12 +100,10 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
                   shadow-xl
                 "
               >
-                {/* Name */}
                 <div className="text-xs font-bold text-white">
                   {item.name}
                 </div>
 
-                {/* Designation */}
                 <div className="text-[10px] text-white">
                   {item.designation}
                 </div>
@@ -113,13 +111,12 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
             )}
           </AnimatePresence>
 
-          {/* ================= AVATAR ================= */}
           <div
             onMouseMove={handleMouseMove}
             className="
               relative
-              h-[43px]
-              w-[43px]
+              h-11
+              w-11
               cursor-pointer
               overflow-hidden
               rounded-full
@@ -143,15 +140,14 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
         </div>
       ))}
 
-      {/* ================= 2K+ CIRCLE ================= */}
       <div
         className="
           relative
           z-40
           ml-0.5
           flex
-          h-[43px]
-          w-[43px]
+          h-11
+          w-11
           shrink-0
           items-center
           justify-center

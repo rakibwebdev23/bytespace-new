@@ -1,4 +1,5 @@
 import Banner from "./components/Banner";
+import ByteSpaceCourses from "./components/ByteSpaceCourses";
 import CompanyLogo from "./components/CompanyLogo";
 
 export default function HomeMain() {
@@ -6,6 +7,7 @@ export default function HomeMain() {
     <>
       <Banner />
       <CompanyLogo />
+      <ByteSpaceCourses />
     </>
   );
 }
