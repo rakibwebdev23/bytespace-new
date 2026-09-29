@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Signal, Star } from "lucide-react";
 import Link from "next/link";
 import type { CourseType } from "@/types/courseType";
 import Image from "next/image";
@@ -11,9 +11,9 @@ const CourseCard = ({ course }: CourseCardProps) => {
   return (
     <Link
       href={`/courses/${course.slug}`}
-      className="group block w-full max-w-[373px] overflow-hidden rounded-[22px] border border-gray-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+      className="group w-full max-w-full overflow-hidden rounded-3xl border border-[#CED0D3] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
     >
-      <div className="relative m-4 mb-0 h-[195px] overflow-hidden rounded-[14px]">
+      <div className="relative m-4 mb-0 h-[200px] overflow-hidden rounded-xl">
         <Image
           src={course.thumbnail}
           alt={course.title}
@@ -23,52 +23,46 @@ const CourseCard = ({ course }: CourseCardProps) => {
         />
 
         {/* image information */}
-        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
-          <span className="rounded-full bg-black/30 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur-md">
+        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 sm:gap-2">
+          <span className="flex min-w-0 flex-col items-center justify-center truncate rounded-3xl bg-[rgba(246,246,246,0.60)] px-2 py-1 text-[9px] font-medium text-[#242528] backdrop-blur-[4px] sm:px-3 sm:py-1.5 sm:text-[11px]">
             {course.lessonsCount} Lessons
           </span>
 
-          <span className="rounded-full bg-black/30 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur-md">
+          <span className="flex min-w-0 flex-col items-center justify-center truncate rounded-3xl bg-[rgba(246,246,246,0.60)] px-2 py-1 text-[9px] font-medium text-[#242528] backdrop-blur-[4px] sm:px-3 sm:py-1.5 sm:text-[11px]">
             {course.duration}
           </span>
 
-          <span className="rounded-full bg-black/30 px-3 py-1.5 text-[11px] font-medium text-white backdrop-blur-md">
+          <span className="flex min-w-0 flex-col items-center justify-center truncate rounded-3xl bg-[rgba(246,246,246,0.60)] px-2 py-1 text-[9px] font-medium text-[#242528] backdrop-blur-[4px] sm:px-3 sm:py-1.5 sm:text-[11px]">
             {course.commentsCount} Comments
           </span>
         </div>
       </div>
 
       {/* content */}
-      <div className="px-4 pb-5 pt-3">
+      <div className="flex flex-col gap-4 px-4 pb-5 pt-3">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="line-clamp-1 text-[17px] font-semibold leading-6 text-[#111111]">
+          <h3 className="min-w-0 line-clamp-1 font-[Poppins] text-xl font-semibold leading-[1.2] tracking-[-0.2px] text-black">
             {course.title}
           </h3>
 
-          <div className="flex shrink-0 items-center gap-1 text-sm text-gray-500">
+          <div className="flex shrink-0 items-center gap-1 text-sm text-[#4F4F4F]">
             <span>{course.rating}</span>
 
             <Star
               size={17}
-              className="fill-gray-300 text-gray-300"
+              className="fill-[#D4FB20] text-[#D4FB20]"
             />
           </div>
         </div>
 
-        <p className="mt-0.5 text-[11px] text-gray-500">
-          by{" "}
-          <span className="text-[#1857e8]">
-            {course.instructor.name.toLowerCase()}
-          </span>
+        <p className="font-[Satoshi] text-xs font-normal leading-[1.6] text-[#4F4F4F]">
+          by <span className="text-[#003BE2]">PurePearl Studio</span>
         </p>
 
-        <div className="mt-4 flex items-center justify-between">
-          <div className="flex items-center gap-2 rounded-full bg-gray-100 px-3 py-2">
-            <span className="text-[12px] text-gray-500">
-              📊
-            </span>
-
-            <span className="text-[11px] font-medium text-gray-600">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="flex items-center justify-center gap-1 rounded-3xl bg-[#F5F5F6] px-3 py-1.5">
+            <Signal aria-hidden="true" className="h-5 w-5 text-[#4B4C53]" strokeWidth={1.8} />
+            <span className="text-center font-[Satoshi] text-xs font-medium leading-[1.2] text-[#4B4C53]">
               {course.level}
             </span>
           </div>
@@ -88,19 +82,18 @@ const CourseCard = ({ course }: CourseCardProps) => {
                 }`}
               />
             ))}
-
-            <div className="-ml-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#c7ff00] text-[10px] font-semibold text-black">
+            <div className="-ml-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#D4FB20] font-[Satoshi] text-xs font-medium leading-5 text-[#242528]">
               26+
             </div>
           </div>
         </div>
 
-        <div className="mt-4 flex items-end gap-1">
-          <span className="text-[17px] font-bold text-[#0057ff]">
+        <div className="flex items-end gap-1">
+          <span className="font-[Poppins] text-xl font-semibold leading-[1.2] tracking-[-0.2px] text-[#003BE2]">
             ${course.price}
           </span>
 
-          <span className="mb-[1px] text-[10px] text-gray-500">
+          <span className="mb-[1px] font-[Satoshi] text-xs font-normal leading-[1.6] text-[#4F4F4F]">
             /lifetime
           </span>
         </div>

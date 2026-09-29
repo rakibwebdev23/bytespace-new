@@ -50,7 +50,7 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
       {items.map((item) => (
         <div
           key={item.id}
-          className="group relative -mr-3.75"
+          className="group relative -mr-3 sm:-mr-3.75"
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -83,7 +83,7 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
                   rotate,
                   whiteSpace: "nowrap",
                 }}
-                className="
+                className="pointer-events-none
                   absolute
                   -top-14.5
                   left-1/2
@@ -115,8 +115,10 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
             onMouseMove={handleMouseMove}
             className="
               relative
-              h-11
-              w-11
+              h-9
+              w-9
+              sm:h-11
+              sm:w-11
               cursor-pointer
               overflow-hidden
               rounded-full
@@ -133,7 +135,7 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
               src={item.image}
               alt={item.name}
               fill
-              sizes="55px"
+              sizes="(max-width: 640px) 36px, 44px"
               className="object-cover object-top"
             />
           </div>
@@ -146,14 +148,16 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
           z-40
           ml-0.5
           flex
-          h-11
-          w-11
+          h-9
+          w-9
+          text-[16px]
+          sm:h-11
+          sm:w-11
           shrink-0
           items-center
           justify-center
           rounded-full
           bg-[#D4FB20]
-          text-[16px]
           font-medium
           leading-none
           text-[#242528]

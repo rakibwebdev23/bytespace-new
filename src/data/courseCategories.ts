@@ -1,10 +1,6 @@
-export interface CourseCategory {
-  id: number;
-  slug: string;
-  name: string;
-}
+import { CourseCategoryType } from "@/types/courseCategoryType";
 
-export const courseCategories: CourseCategory[] = [
+export const courseCategories: CourseCategoryType[] = [
   { id: 1, slug: "all", name: "Feature" },
   { id: 2, slug: "music", name: "Music" },
   { id: 3, slug: "drawing-painting", name: "Drawing & Painting" },

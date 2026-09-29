@@ -1,7 +1,6 @@
 "use client";
 
-import { Search } from "lucide-react";
-import { Rating } from "react-simple-star-rating";
+import { Search, Star } from "lucide-react";
 
 import { happyStudentsData } from "@/data/happyStudentsData";
 import bannerBg from "../../../../public/home/banner-bg.png";
@@ -108,20 +107,11 @@ export default function Banner() {
     </span>
 
     <span className="flex h-4 items-center">
-      <Rating
-        initialValue={4.5}
-        allowFraction
-        readonly
-        size={16}
-        SVGclassName="inline-block"
-        fillColor="#D4FB20"
-        emptyColor="#E5E5E5"
-        transition
-      />
+      <Star aria-hidden="true" size={16} className="fill-[#D4FB20] text-[#D4FB20]" />
     </span>
   </div>
 
-  <div className="mt-2 max-w-full overflow-hidden">
+  <div className="mt-2 max-w-full overflow-visible">
     <AnimatedTooltip items={happyStudentsData} />
   </div>
 </div>
