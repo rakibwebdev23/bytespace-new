@@ -18,12 +18,12 @@ export default function LearningPaths() {
           <h2 className="mx-auto max-w-220 font-[Poppins] text-[26px] font-semibold leading-[1.2] tracking-[-0.36px] text-[#040819] sm:text-[32px] md:text-[36px]">
             Explore Diverse Learning Paths at Bytespace
           </h2>
-          <p className="mx-auto mt-4 w-full max-w-[917px] font-[Satoshi] text-[15px] font-normal leading-[1.6] text-[#82868E] sm:mt-5 sm:text-[18px]">
+          <p className="mx-auto mt-4 w-full max-w-230 font-[Satoshi] text-[15px] font-normal leading-[1.6] text-[#82868E] sm:mt-5 sm:text-[18px]">
             At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there&apos;s something for everyone. Unleash your potential and explore our carefully curated categories.
           </p>
         </div>
 
-        <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:mt-[68px] lg:grid-cols-6 lg:gap-6 xl:gap-10">
+        <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:mt-17 lg:grid-cols-6 lg:gap-6 xl:gap-10">
           {learningPaths.map((path) => (
             <div
               key={path.name}
