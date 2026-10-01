@@ -43,25 +43,25 @@ const course: CourseType = {
         id: 1,
         name: "Alice Johnson",
         designation: "Software Engineer",
-        image: "https://randomuser.me/api/portraits/women/44.jpg",
+        image: "/home/happy-student/alice.png",
       },
       {
         id: 4,
         name: "James Kim",
         designation: "DevOps Engineer",
-        image: "https://randomuser.me/api/portraits/men/76.jpg",
+        image: "/home/happy-student/james.png",
       },
       {
         id: 2,
         name: "Sophia Martinez",
         designation: "UI/UX Designer",
-        image: "https://randomuser.me/api/portraits/women/65.jpg",
+        image: "/home/happy-student/shoipa.png",
       },
       {
         id: 3,
         name: "Olivia Wilson",
         designation: "Product Designer",
-        image: "https://randomuser.me/api/portraits/women/33.jpg",
+        image: "/home/happy-student/olivia.png",
       },
     ],
 
@@ -178,7 +178,7 @@ Uncover the secrets behind effective visual communication, exploring color theor
           id: 1,
           name: "Alice Johnson",
           designation: "Software Engineer",
-          image: "https://randomuser.me/api/portraits/women/44.jpg",
+          image: "/home/happy-student/alice.png",
         },
 
         rating: 5,
@@ -196,7 +196,7 @@ Uncover the secrets behind effective visual communication, exploring color theor
           id: 4,
           name: "James Kim",
           designation: "DevOps Engineer",
-          image: "https://randomuser.me/api/portraits/men/76.jpg",
+          image: "/home/happy-student/james.png",
         },
 
         rating: 5,
@@ -214,7 +214,7 @@ Uncover the secrets behind effective visual communication, exploring color theor
           id: 2,
           name: "Sophia Martinez",
           designation: "UI/UX Designer",
-          image: "https://randomuser.me/api/portraits/women/65.jpg",
+          image: "/home/happy-student/shoipa.png",
         },
 
         rating: 5,

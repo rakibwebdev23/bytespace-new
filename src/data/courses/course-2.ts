@@ -43,25 +43,25 @@ const course: CourseType = {
         id: 5,
         name: "Michael Lee",
         designation: "Product Manager",
-        image: "https://randomuser.me/api/portraits/men/32.jpg",
+        image: "/home/happy-student/michel.png",
       },
       {
         id: 6,
         name: "James Kim",
         designation: "DevOps Engineer",
-        image: "https://randomuser.me/api/portraits/men/76.jpg",
+        image: "/home/happy-student/james.png",
       },
       {
         id: 7,
         name: "Emma Brown",
         designation: "QA Analyst",
-        image: "https://randomuser.me/api/portraits/women/12.jpg",
+        image: "/home/happy-student/emma.png",
       },
       {
         id: 8,
         name: "Daniel Smith",
         designation: "Frontend Developer",
-        image: "https://randomuser.me/api/portraits/men/45.jpg",
+        image: "/home/happy-student/daniel.png",
       },
     ],
 
@@ -174,7 +174,7 @@ The course also introduces real-world applications of Big Data and helps learner
           id: 5,
           name: "Michael Lee",
           designation: "Product Manager",
-          image: "https://randomuser.me/api/portraits/men/32.jpg",
+          image: "/home/happy-student/michel.png",
         },
 
         rating: 5,
@@ -192,7 +192,7 @@ The course also introduces real-world applications of Big Data and helps learner
           id: 8,
           name: "Daniel Smith",
           designation: "Frontend Developer",
-          image: "https://randomuser.me/api/portraits/men/45.jpg",
+          image: "/home/happy-student/daniel.png",
         },
 
         rating: 4,
@@ -210,7 +210,7 @@ The course also introduces real-world applications of Big Data and helps learner
           id: 7,
           name: "Emma Brown",
           designation: "QA Analyst",
-          image: "https://randomuser.me/api/portraits/women/12.jpg",
+          image: "/home/happy-student/emma.png",
         },
 
         rating: 5,

@@ -43,25 +43,25 @@ const course: CourseType = {
         id: 1,
         name: "Alice Johnson",
         designation: "Software Engineer",
-        image: "https://randomuser.me/api/portraits/women/44.jpg",
+        image: "/home/happy-student/alice.png",
       },
       {
         id: 2,
         name: "Sophia Martinez",
         designation: "UI/UX Designer",
-        image: "https://randomuser.me/api/portraits/women/65.jpg",
+        image: "/home/happy-student/shoipa.png",
       },
       {
         id: 3,
         name: "Olivia Wilson",
         designation: "Product Designer",
-        image: "https://randomuser.me/api/portraits/women/33.jpg",
+        image: "/home/happy-student/olivia.png",
       },
       {
         id: 4,
         name: "Daniel Smith",
         designation: "Frontend Developer",
-        image: "https://randomuser.me/api/portraits/men/45.jpg",
+        image: "/home/happy-student/daniel.png",
       },
     ],
 
@@ -174,7 +174,7 @@ Whether you are completely new to UI/UX design or looking to improve your existi
           id: 1,
           name: "Alice Johnson",
           designation: "Software Engineer",
-          image: "https://randomuser.me/api/portraits/women/44.jpg",
+          image: "/home/happy-student/alice.png",
         },
 
         rating: 5,
@@ -192,7 +192,7 @@ Whether you are completely new to UI/UX design or looking to improve your existi
           id: 2,
           name: "Sophia Martinez",
           designation: "UI/UX Designer",
-          image: "https://randomuser.me/api/portraits/women/65.jpg",
+          image: "/home/happy-student/shoipa.png",
         },
 
         rating: 5,
@@ -210,7 +210,7 @@ Whether you are completely new to UI/UX design or looking to improve your existi
           id: 3,
           name: "Olivia Wilson",
           designation: "Product Designer",
-          image: "https://randomuser.me/api/portraits/women/33.jpg",
+          image: "/home/happy-student/olivia.png",
         },
 
         rating: 4,
