@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import SiteChrome from "@/components/layout/SiteChrome";
 
 export const metadata: Metadata = {
   title: "ByteSpace",
@@ -27,9 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="flex min-h-full flex-col bg-white">
-        <Navbar/>
-        {children}
-        <Footer/>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

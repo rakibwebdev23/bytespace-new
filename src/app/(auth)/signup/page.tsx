@@ -1,38 +1,38 @@
 import Link from "next/link";
-import CommonWrapper from "@/components/shared/CommonWrapper";
+import AuthPageLayout from "@/components/shared/AuthPageLayout";
 
 export default function SignUpPage() {
   return (
-    <section className="min-h-screen bg-orange-50 py-12">
-      <CommonWrapper className="flex min-h-[calc(100vh-6rem)] items-center justify-center">
-      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg shadow-orange-950/5 sm:p-10">
-        <Link href="/" className="text-sm font-semibold text-orange-600 hover:text-orange-700">
-          Halal Haven
-        </Link>
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-gray-900">Create your account</h1>
-        <p className="mt-2 text-sm text-gray-600">Join Halal Haven and start learning today.</p>
+    <AuthPageLayout
+      title="Sign up"
+      description="The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost."
+    >
+      <p className="font-[Satoshi] text-[18px] font-normal leading-[1.6] text-[#003BE2]">
+        Create an Account
+      </p>
+      <h2 className="mt-3 w-full max-w-[453px] font-[Poppins] text-[30px] font-semibold leading-[1.2] tracking-[-0.44px] text-[#242528] sm:text-[36px] lg:text-[44px]">
+        Welcome to ByteSpace
+      </h2>
 
-        <form className="mt-8 space-y-5">
-          <div>
-            <label htmlFor="name" className="mb-2 block text-sm font-medium text-gray-700">Full name</label>
-            <input id="name" name="name" type="text" autoComplete="name" required className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100" placeholder="Your name" />
-          </div>
-          <div>
-            <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-700">Email address</label>
-            <input id="email" name="email" type="email" autoComplete="email" required className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100" placeholder="you@example.com" />
-          </div>
-          <div>
-            <label htmlFor="password" className="mb-2 block text-sm font-medium text-gray-700">Password</label>
-            <input id="password" name="password" type="password" autoComplete="new-password" required className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100" placeholder="Create a password" />
-          </div>
-          <button type="submit" className="w-full rounded-lg bg-orange-600 px-4 py-3 font-semibold text-white transition hover:bg-orange-700">Create account</button>
-        </form>
+      <form className="mt-8 space-y-5">
+        <div>
+          <label htmlFor="name" className="mb-2 block font-[Satoshi] text-[14px] font-medium leading-[1.2] text-[#242528]">Full name</label>
+          <input id="name" name="name" type="text" autoComplete="name" required className="h-[52px] w-full rounded-xl border border-[#E5E6E8] bg-white px-6 py-3 font-[Satoshi] text-[18px] font-normal leading-[1.6] text-[#242528] outline-none transition placeholder:text-[#82868E] focus:border-[#003BE2] focus:ring-2 focus:ring-blue-100" placeholder="Jamie Davis" />
+        </div>
+        <div>
+          <label htmlFor="email" className="mb-2 block font-[Satoshi] text-[14px] font-medium leading-[1.2] text-[#242528]">Email</label>
+          <input id="email" name="email" type="email" autoComplete="email" required className="h-[52px] w-full rounded-xl border border-[#E5E6E8] bg-white px-6 py-3 font-[Satoshi] text-[18px] font-normal leading-[1.6] text-[#242528] outline-none transition placeholder:text-[#82868E] focus:border-[#003BE2] focus:ring-2 focus:ring-blue-100" placeholder="designer@example.com" />
+        </div>
+        <div>
+          <label htmlFor="password" className="mb-2 block font-[Satoshi] text-[14px] font-medium leading-[1.2] text-[#242528]">Password</label>
+          <input id="password" name="password" type="password" autoComplete="new-password" required className="h-[52px] w-full rounded-xl border border-[#E5E6E8] bg-white px-6 py-3 font-[Satoshi] text-[18px] font-normal leading-[1.6] text-[#242528] outline-none transition placeholder:text-[#82868E] focus:border-[#003BE2] focus:ring-2 focus:ring-blue-100" placeholder="********" />
+        </div>
+        <button type="submit" className="ml-auto flex w-fit items-center justify-center gap-2 rounded-3xl bg-[#D4FB20] px-6 py-3 font-[Satoshi] text-[18px] font-medium leading-[1.2] text-[#242528] transition hover:bg-[#c4eb12]">Continue</button>
+      </form>
 
-        <p className="mt-7 text-center text-sm text-gray-600">
-          Already have an account? <Link href="/signin" className="font-semibold text-orange-600 hover:text-orange-700">Sign in</Link>
-        </p>
-      </div>
-      </CommonWrapper>
-    </section>
+      <p className="mt-7 text-center font-[Satoshi] text-[16px] font-normal leading-[1.6] text-[#4B4C53]">
+        Already have an account? <Link href="/signin" className="font-[Satoshi] text-[16px] font-normal leading-[1.6] text-[#003BE2] hover:underline">Login</Link>
+      </p>
+    </AuthPageLayout>
   );
 }
