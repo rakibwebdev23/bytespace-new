@@ -6,7 +6,17 @@ import CourseCard from "@/components/shared/CourseCard";
 import { courseCategories } from "@/data/courseCategories";
 import { coursesData } from "@/data/courseData";
 
-export default function ByteSpaceCourses() {
+interface ByteSpaceCoursesProps {
+  title?: string;
+  description?: string;
+  showHeading?: boolean;
+}
+
+export default function ByteSpaceCourses({
+  title = "Discover Your Passion, Build Your Skills",
+  description = "At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life.",
+  showHeading = true,
+}: ByteSpaceCoursesProps) {
   const [activeCategory, setActiveCategory] = useState("all");
   const visibleCourses =
     activeCategory === "all"
@@ -21,17 +31,18 @@ export default function ByteSpaceCourses() {
   return (
     <section className="py-10 sm:py-16 lg:py-18">
       <CommonWrapper>
-        <div className="mx-auto w-full text-center">
-          <h2 className="mx-auto w-full max-w-147 font-[Poppins] text-[28px] font-semibold leading-[1.2] tracking-[-0.44px] text-[#040819] sm:text-[34px] md:text-[38px] lg:text-[44px]">
-            Discover Your Passion, Build Your Skills
-          </h2>
-          <p className="mx-auto mt-3 w-full max-w-230 font-[Satoshi] text-[15px] font-normal leading-[1.6] text-[#82868E] sm:mt-4 sm:text-[16px] md:text-[18px]">
-            At Bytespace Courses, we bring you closer to life-changing
-            knowledge. Explore a variety of courses across different fields,
-            from technology to the arts, and make a difference in your career
-            and life.
-          </p>
-        </div>
+        {showHeading && (
+          <div className="mx-auto w-full text-center">
+            <h2 className="mx-auto w-full max-w-147 font-[Poppins] text-[24px] font-semibold leading-[1.2] tracking-[-0.36px] text-[#040819] min-[400px]:text-[26px] sm:text-[34px] sm:tracking-[-0.44px] md:text-[38px] lg:text-[44px]">
+              {title}
+            </h2>
+            {description && (
+              <p className="mx-auto mt-3 w-full max-w-230 font-[Satoshi] text-[14px] font-normal leading-[1.6] text-[#82868E] sm:mt-4 sm:text-[16px] md:text-[18px]">
+                {description}
+              </p>
+            )}
+          </div>
+        )}
 
         <div
           role="group"

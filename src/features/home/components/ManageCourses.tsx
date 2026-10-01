@@ -34,7 +34,6 @@ export default function ManageCourses() {
         />
 
         <div className="flex w-full flex-col gap-3 sm:contents">
-          {/* Total Revenue card: behind the image on md and up */}
           <div className="relative z-30 md:z-10 inline-flex w-full flex-col items-start gap-1.5 rounded-2xl bg-[#003BE2] p-3 py-5 pt-7 backdrop-blur-[10px] sm:gap-2 sm:p-4 md:absolute md:left-0 md:top-[6%] md:mt-0 md:w-fit">
             <h3 className="font-[Satoshi] text-sm font-medium leading-[1.2] text-[#F5F5F6] sm:text-base">
               Total Revenue
@@ -57,7 +56,6 @@ export default function ManageCourses() {
             </div>
           </div>
 
-          {/* Year to Date card: behind the image on md and up */}
           <div className="relative z-30 md:z-10 inline-flex w-full flex-col items-start gap-1.5 rounded-2xl bg-[#003BE2] p-3 backdrop-blur-[10px] sm:gap-2 sm:p-4 md:absolute md:left-0 md:top-[32%] md:mt-0 md:w-fit">
             <h3 className="font-[Satoshi] text-sm font-medium leading-[1.2] text-[#F5F5F6] sm:text-base">
               Year to Date
