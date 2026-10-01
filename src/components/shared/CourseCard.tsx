@@ -85,7 +85,7 @@ const CourseCard = ({
                 className={`h-8 w-8 rounded-full border-2 border-white object-cover ${
                   index !== 0 ? "-ml-2" : ""
                 }`}
-              />
+                />
             ))}
             <div className="-ml-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#D4FB20] font-[Satoshi] text-xs font-medium leading-5 text-[#242528]">
               26+
@@ -116,4 +116,3 @@ const CourseCard = ({
 };
 
 export default CourseCard;
-
