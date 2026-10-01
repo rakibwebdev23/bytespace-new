@@ -94,7 +94,7 @@ export default function Navbar() {
           <div className="hidden items-center gap-7 lg:flex">
             <Link href="/signin" className={navLinkClass}>Sign In</Link>
             <Link href="/signup" className={navLinkClass}>Join Us</Link>
-            <Link href="/cart" className={navLinkClass} aria-label="Shopping bag">
+            <button type="button" className={`${iconLinkClass} cursor-pointer`} aria-label="Shopping bag">
               <Image
                 src="/home/shopping.svg"
                 alt=""
@@ -102,15 +102,14 @@ export default function Navbar() {
                 height={24}
                 className="h-6 w-6 shrink-0"
               />
-            </Link>
+            </button>
           </div>
 
           {/* mobile / tablet actions */}
           <div className="flex items-center gap-1 sm:gap-2 lg:hidden">
-            <Link
-              href="/cart"
-              onClick={closeMenu}
-              className={iconLinkClass}
+            <button
+              type="button"
+              className={`${iconLinkClass} cursor-pointer`}
               aria-label="Shopping bag"
             >
               <Image
@@ -120,7 +119,7 @@ export default function Navbar() {
                 height={24}
                 className="h-6 w-6 shrink-0"
               />
-            </Link>
+            </button>
             <button
               type="button"
               onClick={() => setMenuOpen((open) => !open)}
@@ -177,4 +176,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
