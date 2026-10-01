@@ -47,7 +47,7 @@ export default function Footer() {
                 alt="ByteSpace"
                 width={171}
                 height={37}
-                className="h-[37px] w-[171px]"
+                className="h-auto w-[145px] sm:h-[37px] sm:w-[171px]"
               />
 
               <p className="mt-3 w-full font-[Satoshi] text-sm font-normal leading-[1.6] text-[#242528]">
@@ -79,7 +79,7 @@ export default function Footer() {
             {/* Right: link columns */}
             <nav
               aria-label="Footer"
-              className="grid w-full grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:w-[580px]"
+              className="grid w-full grid-cols-2 gap-x-6 gap-y-8 py-6 sm:grid-cols-3 sm:py-0 lg:w-[580px]"
             >
               {linkColumns.map((column, index) => (
                 <ul key={index} className="flex flex-col gap-[22px]">
