@@ -92,7 +92,7 @@ export default function AuthPageLayout({
                 src={maskImage}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute left-[76.3%] top-[61.7%] z-30 h-auto w-[18.5%] object-contain"
+                className="pointer-events-none absolute left-[76.3%] top-[61.7%] z-50 h-auto w-[18.5%] object-contain"
               />
 
               <div className="absolute left-[46%] top-[75.5%] z-40 w-[47%] rounded-xl bg-[#D4FB20] p-[2.8%] text-left sm:rounded-2xl">
