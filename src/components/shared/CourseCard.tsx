@@ -5,21 +5,28 @@ import Image from "next/image";
 
 interface CourseCardProps {
   course: CourseType;
+  staticCard?: boolean;
+  imageHeightClass?: string;
+  className?: string;
 }
 
-const CourseCard = ({ course }: CourseCardProps) => {
-  return (
-    <Link
-      href={`/courses/${course.slug}`}
-      className="group w-full max-w-full overflow-hidden rounded-3xl border border-[#CED0D3] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-    >
-      <div className="relative m-4 mb-0 h-[200px] overflow-hidden rounded-xl">
+const CourseCard = ({
+  course,
+  staticCard = false,
+  imageHeightClass = "h-[200px]",
+  className: cardClassName = "",
+}: CourseCardProps) => {
+  const className = `${staticCard ? "" : "group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"} ${cardClassName ? "" : "w-full max-w-full"} overflow-hidden rounded-3xl border border-[#CED0D3] bg-white ${cardClassName}`;
+
+  const cardContent = (
+    <>
+      <div className={`relative m-4 mb-0 ${imageHeightClass} overflow-hidden rounded-xl`}>
         <Image
           src={course.thumbnail}
           alt={course.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 373px"
-          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          className={`object-cover ${staticCard ? "" : "transition-transform duration-300 group-hover:scale-[1.03]"}`}
         />
 
         {/* image information */}
@@ -98,6 +105,14 @@ const CourseCard = ({ course }: CourseCardProps) => {
           </span>
         </div>
       </div>
+    </>
+  );
+
+  return staticCard ? (
+    <div className={className}>{cardContent}</div>
+  ) : (
+    <Link href={`/courses/${course.slug}`} className={className}>
+      {cardContent}
     </Link>
   );
 };
