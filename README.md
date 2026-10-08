@@ -11,14 +11,16 @@ ByteSpace is an online learning platform interface for discovering courses, expl
 - Sign up and sign in pages
 - Creator page
 - Responsive layouts for desktop and mobile
+- Scroll-triggered reveals across the homepage and authentication pages, including staggered course, learning path, company logo, and testimonial cards
 
 ## Tech stack
 
 - Next.js 16 with the App Router
 - React 19 and TypeScript
 - Tailwind CSS 4
+- GSAP with ScrollTrigger for scroll-based animations
+- Motion for interactive student avatar tooltips
 - Lucide React icons
-- Motion for animations
 
 ## Project structure
 
@@ -49,6 +51,12 @@ public/
 ├── auth-mask.png
 └── ...                           # Logos and other static assets
 ```
+
+## Scroll animations
+
+Homepage scroll reveals are coordinated in `src/features/home/HomeMain.tsx` with GSAP ScrollTrigger. Elements marked with `data-scroll-item` animate as they enter the viewport; `data-scroll-stagger` groups reveal their marked children in sequence. Animations reverse when scrolling back up and are disabled when the visitor prefers reduced motion.
+
+The sign-in and sign-up pages use the shared `AuthPageLayout` for directional entrance animations. GSAP is installed as a project dependency, so no separate animation setup is needed.
 
 ## Getting started
 

@@ -32,7 +32,7 @@ export default function ByteSpaceCourses({
     <section className="py-10 sm:py-16 lg:py-18">
       <CommonWrapper>
         {showHeading && (
-          <div className="mx-auto w-full text-center">
+          <div data-scroll-item className="mx-auto w-full text-center">
             <h2 className="mx-auto w-full max-w-147 font-[Poppins] text-[24px] font-semibold leading-[1.2] tracking-[-0.36px] text-[#040819] min-[400px]:text-[26px] sm:text-[34px] sm:tracking-[-0.44px] md:text-[38px] lg:text-[44px]">
               {title}
             </h2>
@@ -47,6 +47,7 @@ export default function ByteSpaceCourses({
         <div
           role="group"
           aria-label="Filter courses by category"
+          data-scroll-item
           className="mt-8 space-y-3 sm:mt-11 sm:space-y-4 lg:space-y-5"
         >
           {categoryRows.map((row, rowIndex) => (
@@ -90,8 +91,16 @@ export default function ByteSpaceCourses({
       <CommonWrapper>
         {visibleCourses.length > 0 ? (
           <div className="mt-8 grid grid-cols-1 justify-items-center gap-5 sm:mt-18 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-10">
-            {visibleCourses.map((course) => (
-              <CourseCard key={course.id} course={course} />
+            {visibleCourses.map((course, index) => (
+              <div
+                key={course.id}
+                data-scroll-item
+                data-course-card-reveal
+                data-scroll-delay={index * 0.1}
+                className="w-full min-w-0"
+              >
+                <CourseCard course={course} />
+              </div>
             ))}
           </div>
         ) : (

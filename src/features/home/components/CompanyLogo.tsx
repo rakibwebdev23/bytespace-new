@@ -12,10 +12,11 @@ export default function CompanyLogo() {
   return (
     <section className="flex items-center bg-[#F5F5F6] py-10 sm:py-12 lg:min-h-50.5 lg:py-0">
       <CommonWrapper className="px-4 sm:px-10 lg:px-12 xl:px-34">
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-8 lg:flex-nowrap lg:justify-between lg:gap-x-6">
+        <div data-scroll-stagger className="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-8 lg:flex-nowrap lg:justify-between lg:gap-x-6">
           {logos.map((logo, index) => (
             <div
               key={index}
+              data-scroll-item
               className="flex basis-[calc(50%-0.75rem)] items-center justify-center sm:basis-auto lg:min-w-0 lg:flex-1"
             >
               <Image

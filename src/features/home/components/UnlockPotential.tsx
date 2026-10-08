@@ -11,7 +11,7 @@ export default function UnlockPotential() {
       }}
     >
       <CommonWrapper>
-        <div className="flex flex-col items-center justify-center gap-6 px-4 py-12 text-center sm:gap-8 sm:px-6 sm:py-16 lg:gap-10 lg:py-20">
+        <div data-scroll-item className="flex flex-col items-center justify-center gap-6 px-4 py-12 text-center sm:gap-8 sm:px-6 sm:py-16 lg:gap-10 lg:py-20">
           <h2
             id="creator-cta-title"
             className="w-full max-w-[710px] font-[Poppins] text-[26px] font-semibold leading-[1.2] tracking-[-0.44px] text-[#F5F5F6] min-[400px]:text-[28px] sm:text-[34px] md:text-[40px] lg:text-[44px]"

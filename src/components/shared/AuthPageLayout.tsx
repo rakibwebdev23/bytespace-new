@@ -1,4 +1,8 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useLayoutEffect, useRef, type ReactNode } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import CommonWrapper from "@/components/shared/CommonWrapper";
@@ -23,8 +27,49 @@ export default function AuthPageLayout({
   description,
   children,
 }: AuthPageLayoutProps) {
+  const layoutRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const context = gsap.context(() => {
+      gsap.utils
+        .toArray<HTMLElement>("[data-auth-scroll]", layoutRef.current ?? undefined)
+        .forEach((item) => {
+          const direction = item.dataset.authScroll;
+
+          gsap.fromTo(
+            item,
+            {
+              autoAlpha: 0,
+              x: direction === "left" ? -64 : direction === "right" ? 64 : 0,
+              y: direction === "top" ? -32 : direction === "bottom" ? 40 : 0,
+            },
+            {
+              autoAlpha: 1,
+              x: 0,
+              y: 0,
+              duration: 1,
+              delay: Number(item.dataset.authDelay ?? 0),
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+              },
+            },
+          );
+        });
+    }, layoutRef);
+
+    return () => context.revert();
+  }, []);
+
   return (
     <section
+      ref={layoutRef}
       className="h-fit min-h-screen overflow-x-clip bg-cover bg-center bg-no-repeat pb-10 sm:pb-12 lg:pb-[120px]"
       style={{ backgroundImage: "url('/register-back.png')" }}
     >
@@ -32,6 +77,7 @@ export default function AuthPageLayout({
         <Link
           href="/"
           aria-label="ByteSpace home"
+          data-auth-scroll="top"
           className="inline-flex w-fit pb-6 pt-6 sm:pb-8 sm:pt-8 lg:pb-14"
         >
           <Image
@@ -45,7 +91,7 @@ export default function AuthPageLayout({
         </Link>
 
         <div className="grid grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(420px,579px)] lg:gap-x-12 lg:gap-y-[53px] xl:gap-x-16">
-          <div className="w-full max-w-[475px] text-left">
+          <div data-auth-scroll="left" className="w-full max-w-[475px] text-left">
             <h1 className="font-[Poppins] text-[20px] font-semibold leading-[1.2] tracking-[-0.2px] text-[#F5F5F6]">
               {title}
             </h1>
@@ -54,30 +100,44 @@ export default function AuthPageLayout({
             </p>
           </div>
 
-          <div className="w-full rounded-3xl bg-white p-5 shadow-xl shadow-blue-950/15 sm:p-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:px-[63px] lg:pb-10 lg:pt-[63px]">
+          <div data-auth-scroll="right" className="w-full rounded-3xl bg-white p-5 shadow-xl shadow-blue-950/15 sm:p-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:px-[63px] lg:pb-10 lg:pt-[63px]">
             {children}
           </div>
 
           <div className="w-full lg:max-w-[528px]">
             <div className="relative mx-auto aspect-[692/697] w-full max-w-[692px] lg:mx-0 xl:-ml-[16.7%] xl:w-[116.7%] xl:max-w-none">
-              <CourseCard
-                course={figmaCourse}
-                staticCard
-                imageHeightClass="h-[50.5%]"
+              <div
+                data-auth-scroll="left"
+                data-auth-delay="0.12"
                 className="absolute left-[14.3%] top-[19.7%] z-10 h-[61.7%] w-[60.5%]"
-              />
+              >
+                <CourseCard
+                  course={figmaCourse}
+                  staticCard
+                  imageHeightClass="h-[50.5%]"
+                  className="h-full w-full"
+                />
+              </div>
 
-              <CourseCard
-                course={figmaCourse2}
-                staticCard
-                imageHeightClass="h-[50.5%]"
+              <div
+                data-auth-scroll="right"
+                data-auth-delay="0.24"
                 className="absolute left-[32.4%] top-[5.3%] z-20 h-[61.7%] w-[60.5%]"
-              />
+              >
+                <CourseCard
+                  course={figmaCourse2}
+                  staticCard
+                  imageHeightClass="h-[50.5%]"
+                  className="h-full w-full"
+                />
+              </div>
 
               <Image
                 src={circleImage}
                 alt=""
                 aria-hidden="true"
+                data-auth-scroll="top"
+                data-auth-delay="0.36"
                 className="pointer-events-none absolute left-[22.5%] top-[11.8%] z-30 h-auto w-[14%] object-contain"
               />
 
@@ -85,6 +145,8 @@ export default function AuthPageLayout({
                 src={coneImage}
                 alt=""
                 aria-hidden="true"
+                data-auth-scroll="bottom"
+                data-auth-delay="0.48"
                 className="pointer-events-none absolute left-[14.3%] top-[72.7%] z-30 h-auto w-[20.5%] object-contain"
               />
 
@@ -95,7 +157,7 @@ export default function AuthPageLayout({
                 className="pointer-events-none absolute left-[76.3%] top-[61.7%] z-50 h-auto w-[18.5%] object-contain"
               />
 
-              <div className="absolute left-[46%] top-[75.5%] z-40 w-[47%] rounded-xl bg-[#D4FB20] p-[2.8%] text-left sm:rounded-2xl">
+              <div data-auth-scroll="right" data-auth-delay="0.6" className="absolute left-[46%] top-[75.5%] z-40 w-[47%] rounded-xl bg-[#D4FB20] p-[2.8%] text-left sm:rounded-2xl">
                 <h2 className="font-[Satoshi] text-[clamp(12px,2.6vw,18px)] font-medium leading-[1.2] text-[#242528]">
                   Happy Students
                 </h2>

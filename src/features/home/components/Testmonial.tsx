@@ -65,7 +65,7 @@ export default function Testmonial() {
 
       <CommonWrapper className="relative z-10 py-10 sm:py-14 lg:py-[72px]">
         <div className="px-4 sm:px-6 lg:px-0">
-          <div className="flex min-w-0 flex-col items-center gap-4 text-center sm:gap-6 lg:flex-row lg:items-center lg:justify-between lg:text-left">
+          <div data-scroll-item className="flex min-w-0 flex-col items-center gap-4 text-center sm:gap-6 lg:flex-row lg:items-center lg:justify-between lg:text-left">
             <h2
               id="testimonials-title"
               className="w-full max-w-[577px] font-[Poppins] text-[26px] font-semibold leading-[1.2] tracking-[-0.44px] text-black min-[400px]:text-[28px] sm:text-[34px] md:text-[38px] lg:text-[44px]"
@@ -81,10 +81,11 @@ export default function Testmonial() {
             </p>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-[520px] grid-cols-1 gap-5 sm:mt-10 sm:gap-6 md:max-w-none md:grid-cols-2 lg:mt-[72px] lg:grid-cols-3 lg:gap-[41px]">
+          <div data-scroll-stagger className="mx-auto mt-8 grid max-w-[520px] grid-cols-1 gap-5 sm:mt-10 sm:gap-6 md:max-w-none md:grid-cols-2 lg:mt-[72px] lg:grid-cols-3 lg:gap-[41px]">
             {testimonials.map((testimonial, index) => (
               <article
                 key={testimonial.name}
+                data-scroll-item
                 className={`flex min-w-0 flex-col items-center gap-4 rounded-3xl bg-white p-5 text-center sm:gap-6 sm:p-6 md:items-start md:text-left ${
                   index === testimonials.length - 1
                     ? "md:col-span-2 md:mx-auto md:w-[calc(50%-12px)] lg:col-span-1 lg:mx-0 lg:w-auto"

@@ -18,7 +18,7 @@ const growthStats: GrowthStat[] = [
 export default function GrowthSection() {
   return (
     <div className="flex w-full flex-col items-center justify-between gap-8 lg:flex-row lg:gap-10">
-      <div className="order-2 w-full text-center lg:order-1 lg:min-w-0 lg:flex-1 lg:basis-0 lg:text-left">
+      <div data-scroll-item className="order-2 w-full text-center lg:order-1 lg:min-w-0 lg:flex-1 lg:basis-0 lg:text-left">
         <h2 className="font-[Poppins] text-[24px] font-semibold leading-[1.2] tracking-[-0.36px] text-[#242528] min-[400px]:text-[26px] sm:text-[32px] md:text-[36px] lg:text-[44px]">
           Your Path to Professional Growth Starts Here!
         </h2>
@@ -43,13 +43,18 @@ export default function GrowthSection() {
         </div>
       </div>
 
-      <div className="relative order-1 h-[390px] w-full sm:aspect-[577/540] sm:h-auto lg:order-2 lg:min-w-0 lg:flex-1 lg:basis-0">
-        <CourseCard
-          course={figmaCourse}
-          staticCard
-          imageHeightClass="h-[180px]"
+      <div data-scroll-item className="relative order-1 h-[390px] w-full sm:aspect-[577/540] sm:h-auto lg:order-2 lg:min-w-0 lg:flex-1 lg:basis-0">
+        <div
+          data-scroll-item
           className="absolute left-0 top-[25%] h-[270px] w-[72%] max-w-[370px] sm:top-0 sm:h-[384px] sm:w-full"
-        />
+        >
+          <CourseCard
+            course={figmaCourse}
+            staticCard
+            imageHeightClass="h-[180px]"
+            className="h-full w-full"
+          />
+        </div>
 
         <Image
           src={professionalImage}
@@ -60,7 +65,7 @@ export default function GrowthSection() {
           className="absolute left-0 top-0 z-20 h-[340px] w-full object-cover sm:inset-auto sm:top-[2.5%] sm:h-[540px] sm:w-[577px]"
         />
 
-        <div className="absolute bottom-0 right-0 top-auto z-30 flex w-full flex-col items-start gap-1.5 rounded-2xl bg-white p-3 sm:bottom-auto sm:left-[52%] sm:right-auto sm:top-[34%] sm:gap-2 sm:p-4 sm:w-auto lg:w-[46%]">
+        <div data-scroll-item className="absolute bottom-0 right-0 top-auto z-30 flex w-full flex-col items-start gap-1.5 rounded-2xl bg-white p-3 sm:bottom-auto sm:left-[52%] sm:right-auto sm:top-[34%] sm:gap-2 sm:p-4 sm:w-auto lg:w-[46%]">
           <div className="relative flex w-full flex-col items-start gap-1 sm:gap-2">
             <Image
               src={maskImage}

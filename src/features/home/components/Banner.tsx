@@ -18,17 +18,19 @@ export default function Banner() {
       <div className="mx-auto flex w-full flex-col items-center px-4 text-center text-white sm:px-6 md:h-full md:justify-start md:pt-32 lg:pt-36">
         <h1
           id="home-banner-title"
+          data-scroll-item
           className="max-w-5xl text-4xl font-semibold leading-[1.2] tracking-[-0.72px] sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Get Access to Hundreds Courses Available
         </h1>
 
-        <p className="mt-5 w-full max-w-2xl text-base leading-[1.6] text-[#E5E6E8] sm:mt-8 sm:text-lg lg:max-w-none">
+        <p data-scroll-item className="mt-5 w-full max-w-2xl text-base leading-[1.6] text-[#E5E6E8] sm:mt-8 sm:text-lg lg:max-w-none">
           Unlock your creativity, gain valuable knowledge, and grow your
           business with our wide range of courses.
         </p>
 
         <form
+          data-scroll-item
           role="search"
           action="/"
           method="get"
@@ -61,7 +63,7 @@ export default function Banner() {
         {/* Cards: full width stack (same width as search form) below md, absolute from md up */}
         <div className="mt-10 flex w-full flex-col items-center gap-4 sm:mt-12 md:contents">
           {/* ui/ux card */}
-          <div className="flex w-full max-w-146.25 flex-col items-start justify-center gap-2 rounded-2xl bg-white p-4 text-left backdrop-blur-[10px] md:absolute md:bottom-48 md:left-10 md:w-auto md:max-w-none lg:bottom-76 lg:left-[30%]">
+          <div data-banner-card className="flex w-full max-w-146.25 flex-col items-start justify-center gap-2 rounded-2xl bg-white p-4 text-left backdrop-blur-[10px] md:absolute md:bottom-48 md:left-10 md:w-auto md:max-w-none lg:bottom-76 lg:left-[30%]">
             <h2 className="text-base font-medium leading-[1.2] text-[#242528]">
               UI/UX Design
             </h2>
@@ -72,7 +74,7 @@ export default function Banner() {
           </div>
 
           {/* learning progress card */}
-          <div className="flex w-full max-w-146.25 flex-col items-start gap-2 rounded-2xl bg-white p-4 text-left backdrop-blur-[10px] md:absolute md:bottom-10 md:right-10 md:w-60 md:max-w-none lg:bottom-56 lg:right-[25%]">
+          <div data-banner-card className="flex w-full max-w-146.25 flex-col items-start gap-2 rounded-2xl bg-white p-4 text-left backdrop-blur-[10px] md:absolute md:bottom-10 md:right-10 md:w-60 md:max-w-none lg:bottom-56 lg:right-[25%]">
             <h2 className="text-sm font-medium leading-[1.2] text-[#242528]">
               Learning Progress
             </h2>
@@ -94,7 +96,7 @@ export default function Banner() {
           </div>
 
           {/* happy students card */}
-          <div className="z-10 w-full max-w-146.25 rounded-3xl bg-white p-4 text-left md:absolute md:bottom-10 md:left-10 md:w-auto md:max-w-none lg:bottom-14 lg:left-[23%]">
+          <div data-banner-card className="z-10 w-full max-w-146.25 rounded-3xl bg-white p-4 text-left md:absolute md:bottom-10 md:left-10 md:w-auto md:max-w-none lg:bottom-14 lg:left-[23%]">
             <h2 className="text-[16px] font-medium leading-[1.2] text-[#242528]">
               Happy Students
             </h2>

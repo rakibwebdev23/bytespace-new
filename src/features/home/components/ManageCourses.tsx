@@ -15,7 +15,7 @@ const courseBenefits = [
 export default function ManageCourses() {
   return (
     <div className="flex w-full flex-col items-center justify-between gap-8 lg:flex-row lg:gap-10">
-      <div className="relative order-1 w-full sm:aspect-[577/540] lg:min-w-0 lg:flex-1 lg:basis-0">
+      <div data-scroll-item className="relative order-1 w-full sm:aspect-[577/540] lg:min-w-0 lg:flex-1 lg:basis-0">
         <Image
           src={manageCourses}
           alt="A student working on a laptop"
@@ -34,7 +34,7 @@ export default function ManageCourses() {
         />
 
         <div className="flex w-full flex-col gap-3 sm:contents">
-          <div className="relative z-30 md:z-10 inline-flex w-full flex-col items-start gap-1.5 rounded-2xl bg-[#003BE2] p-3 py-5 pt-7 backdrop-blur-[10px] sm:gap-2 sm:p-4 md:absolute md:left-0 md:top-[6%] md:mt-0 md:w-fit">
+          <div data-scroll-item className="relative z-30 md:z-10 inline-flex w-full flex-col items-start gap-1.5 rounded-2xl bg-[#003BE2] p-3 py-5 pt-7 backdrop-blur-[10px] sm:gap-2 sm:p-4 md:absolute md:left-0 md:top-[6%] md:mt-0 md:w-fit">
             <h3 className="font-[Satoshi] text-sm font-medium leading-[1.2] text-[#F5F5F6] sm:text-base">
               Total Revenue
             </h3>
@@ -56,7 +56,7 @@ export default function ManageCourses() {
             </div>
           </div>
 
-          <div className="relative z-30 md:z-10 inline-flex w-full flex-col items-start gap-1.5 rounded-2xl bg-[#003BE2] p-3 backdrop-blur-[10px] sm:gap-2 sm:p-4 md:absolute md:left-0 md:top-[32%] md:mt-0 md:w-fit">
+          <div data-scroll-item className="relative z-30 md:z-10 inline-flex w-full flex-col items-start gap-1.5 rounded-2xl bg-[#003BE2] p-3 backdrop-blur-[10px] sm:gap-2 sm:p-4 md:absolute md:left-0 md:top-[32%] md:mt-0 md:w-fit">
             <h3 className="font-[Satoshi] text-sm font-medium leading-[1.2] text-[#F5F5F6] sm:text-base">
               Year to Date
             </h3>
@@ -71,7 +71,7 @@ export default function ManageCourses() {
             </span>
           </div>
 
-          <div className="relative z-40 w-full rounded-2xl bg-white p-3 text-left backdrop-blur-[10px] sm:absolute sm:bottom-[20%] sm:right-[16%] sm:w-fit sm:max-w-[calc(100%-1rem)] sm:p-4">
+          <div data-scroll-item className="relative z-40 w-full rounded-2xl bg-white p-3 text-left backdrop-blur-[10px] sm:absolute sm:bottom-[20%] sm:right-[16%] sm:w-fit sm:max-w-[calc(100%-1rem)] sm:p-4">
             <h2 className="text-[16px] font-medium leading-[1.2] text-[#242528]">
               Happy Students
             </h2>
@@ -94,7 +94,7 @@ export default function ManageCourses() {
         </div>
       </div>
 
-      <div className="order-2 w-full text-center lg:min-w-0 lg:flex-1 lg:basis-0 lg:text-left">
+      <div data-scroll-item className="order-2 w-full text-center lg:min-w-0 lg:flex-1 lg:basis-0 lg:text-left">
         <h2 className="mx-auto w-full max-w-[391px] font-[Poppins] text-[24px] font-semibold leading-[1.2] tracking-[-0.36px] text-[#242528] min-[400px]:text-[26px] sm:text-[32px] md:text-[36px] lg:mx-0 lg:text-[44px]">
           Create &amp; Manage Courses Easily
         </h2>

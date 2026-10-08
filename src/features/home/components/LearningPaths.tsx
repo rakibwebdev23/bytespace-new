@@ -21,7 +21,7 @@ export default function LearningPaths() {
   return (
     <section className="pb-10 sm:pb-14 lg:pb-20">
       <CommonWrapper>
-        <div className="mx-auto w-full text-center">
+        <div data-scroll-item className="mx-auto w-full text-center">
           <h2 className="mx-auto max-w-220 font-[Poppins] text-[24px] font-semibold leading-[1.2] tracking-[-0.36px] text-[#040819] min-[400px]:text-[26px] sm:text-[32px] md:text-[36px]">
             Explore Diverse Learning Paths at Bytespace
           </h2>
@@ -33,10 +33,11 @@ export default function LearningPaths() {
           </p>
         </div>
 
-        <ul className="mt-8 grid w-full grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-3 sm:gap-5 lg:mt-17 lg:grid-cols-6 lg:gap-6 xl:gap-10">
+        <ul data-scroll-stagger className="mt-8 grid w-full grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-3 sm:gap-5 lg:mt-17 lg:grid-cols-6 lg:gap-6 xl:gap-10">
           {learningPaths.map((path) => (
             <li
               key={path.name}
+              data-scroll-item
               className="flex min-h-32 w-full min-w-0 flex-col items-center justify-center gap-2 rounded-3xl border border-[#CED0D3] px-3 py-5 text-center sm:min-h-40 sm:px-5 sm:py-8 lg:px-3 lg:py-7"
             >
               <span className="flex shrink-0 items-center justify-center rounded-full bg-[#D4FB20] p-3 sm:p-4">
