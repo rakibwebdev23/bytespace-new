@@ -92,20 +92,14 @@ export default function HomeMain() {
       items.forEach((item) => {
         if (item.closest("[data-scroll-stagger]")) return;
 
-        const isCourseCard = item.hasAttribute("data-course-card-reveal");
-
         gsap.fromTo(
           item,
-          isCourseCard
-            ? { autoAlpha: 0, y: 40, scale: 0.97 }
-            : { autoAlpha: 0, y: 36 },
+          { autoAlpha: 0, y: 36 },
           {
             autoAlpha: 1,
             y: 0,
-            ...(isCourseCard ? { scale: 1 } : {}),
-            duration: isCourseCard ? 0.65 : 0.8,
-            delay: Number(item.dataset.scrollDelay ?? 0),
-            ease: isCourseCard ? "power2.out" : "power3.out",
+            duration: 0.8,
+            ease: "power3.out",
             scrollTrigger: {
               trigger: item,
               start: "top 88%",

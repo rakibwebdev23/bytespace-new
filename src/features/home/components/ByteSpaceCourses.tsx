@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CommonWrapper from "@/components/shared/CommonWrapper";
 import CourseCard from "@/components/shared/CourseCard";
 import { courseCategories } from "@/data/courseCategories";
@@ -10,6 +12,52 @@ interface ByteSpaceCoursesProps {
   title?: string;
   description?: string;
   showHeading?: boolean;
+}
+
+function CourseCardReveal({
+  children,
+  index,
+}: {
+  children: ReactNode;
+  index: number;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const context = gsap.context(() => {
+      if (!cardRef.current) return;
+
+      gsap.fromTo(
+        cardRef.current,
+        { autoAlpha: 0, y: 36, scale: 0.98 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.75,
+          delay: (index % 3) * 0.12,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: cardRef.current,
+            start: "top 88%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
+    }, cardRef);
+
+    return () => context.revert();
+  }, [index]);
+
+  return (
+    <div ref={cardRef} className="w-full min-w-0">
+      {children}
+    </div>
+  );
 }
 
 export default function ByteSpaceCourses({
@@ -92,15 +140,9 @@ export default function ByteSpaceCourses({
         {visibleCourses.length > 0 ? (
           <div className="mt-8 grid grid-cols-1 justify-items-center gap-5 sm:mt-18 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-10">
             {visibleCourses.map((course, index) => (
-              <div
-                key={course.id}
-                data-scroll-item
-                data-course-card-reveal
-                data-scroll-delay={index * 0.07}
-                className="w-full min-w-0"
-              >
+              <CourseCardReveal key={course.id} index={index}>
                 <CourseCard course={course} />
-              </div>
+              </CourseCardReveal>
             ))}
           </div>
         ) : (

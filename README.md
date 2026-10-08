@@ -11,7 +11,7 @@ ByteSpace is an online learning platform interface for discovering courses, expl
 - Sign up and sign in pages
 - Creator page
 - Responsive layouts for desktop and mobile
-- Scroll-triggered reveals across the homepage and authentication pages, including staggered course, learning path, company logo, and testimonial cards
+- Scroll-triggered reveals across the homepage and authentication pages, including individually triggered course cards and staggered learning path, company logo, and testimonial cards
 
 ## Tech stack
 
@@ -55,6 +55,8 @@ public/
 ## Scroll animations
 
 Homepage scroll reveals are coordinated in `src/features/home/HomeMain.tsx` with GSAP ScrollTrigger. Elements marked with `data-scroll-item` animate as they enter the viewport; `data-scroll-stagger` groups reveal their marked children in sequence. Animations reverse when scrolling back up and are disabled when the visitor prefers reduced motion.
+
+Course cards in `src/features/home/components/ByteSpaceCourses.tsx` each manage their own ScrollTrigger. This lets newly displayed cards animate when the visitor changes the course category. Cards enter in a short staggered sequence and reverse as the visitor scrolls upward.
 
 The sign-in and sign-up pages use the shared `AuthPageLayout` for directional entrance animations. GSAP is installed as a project dependency, so no separate animation setup is needed.
 
