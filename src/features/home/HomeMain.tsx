@@ -103,7 +103,7 @@ export default function HomeMain() {
             autoAlpha: 1,
             y: 0,
             ...(isCourseCard ? { scale: 1 } : {}),
-            duration: 0.8,
+            duration: isCourseCard ? 0.65 : 0.8,
             delay: Number(item.dataset.scrollDelay ?? 0),
             ease: isCourseCard ? "power2.out" : "power3.out",
             scrollTrigger: {

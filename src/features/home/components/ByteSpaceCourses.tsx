@@ -96,7 +96,7 @@ export default function ByteSpaceCourses({
                 key={course.id}
                 data-scroll-item
                 data-course-card-reveal
-                data-scroll-delay={index * 0.1}
+                data-scroll-delay={index * 0.07}
                 className="w-full min-w-0"
               >
                 <CourseCard course={course} />

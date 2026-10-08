@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import {
-  motion,
-  useTransform,
   AnimatePresence,
+  motion,
   useMotionValue,
   useSpring,
+  useTransform,
 } from "motion/react";
 import type { HappyStudentsType } from "@/types/happyStudentsType";
 
@@ -25,23 +25,18 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
 
   const x = useMotionValue(0);
 
-  // rotate tooltip
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
     springConfig
   );
 
-  // move tooltip horizontally
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
     springConfig
   );
 
-  const handleMouseMove = (
-    event: React.MouseEvent<HTMLDivElement>
-  ) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const halfWidth = event.currentTarget.offsetWidth / 2;
-
     x.set(event.nativeEvent.offsetX - halfWidth);
   };
 
@@ -54,7 +49,6 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          {/* hover tooltip  */}
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
               <motion.div
@@ -83,22 +77,7 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
                   rotate,
                   whiteSpace: "nowrap",
                 }}
-                className="pointer-events-none
-                  absolute
-                  -top-14.5
-                  left-1/2
-                  z-50
-                  flex
-                  -translate-x-1/2
-                  flex-col
-                  items-center
-                  justify-center
-                  rounded-md
-                  bg-black
-                  px-3
-                  py-2
-                  shadow-xl
-                "
+                className="pointer-events-none absolute -top-14.5 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center justify-center rounded-md bg-black px-3 py-2 shadow-xl"
               >
                 <div className="text-xs font-bold text-white">
                   {item.name}
@@ -113,23 +92,7 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
 
           <div
             onMouseMove={handleMouseMove}
-            className="
-              relative
-              h-9
-              w-9
-              sm:h-11
-              sm:w-11
-              cursor-pointer
-              overflow-hidden
-              rounded-full
-              border-2
-              border-white
-              bg-white
-              transition-all
-              duration-300
-              group-hover:z-30
-              group-hover:scale-105
-            "
+            className="relative h-9 w-9 cursor-pointer overflow-hidden rounded-full border-2 border-white bg-white transition-all duration-300 group-hover:z-30 group-hover:scale-105 sm:h-11 sm:w-11"
           >
             <Image
               src={item.image}
@@ -142,27 +105,7 @@ const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
         </div>
       ))}
 
-      <div
-        className="
-          relative
-          z-40
-          ml-0.5
-          flex
-          h-9
-          w-9
-          text-[16px]
-          sm:h-11
-          sm:w-11
-          shrink-0
-          items-center
-          justify-center
-          rounded-full
-          bg-[#D4FB20]
-          font-medium
-          leading-none
-          text-[#242528]
-        "
-      >
+      <div className="relative z-40 ml-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D4FB20] text-[16px] font-medium leading-none text-[#242528] sm:h-11 sm:w-11">
         2K+
       </div>
     </div>
